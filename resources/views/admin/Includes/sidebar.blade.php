@@ -16,13 +16,12 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="{{URL::to('/admin/cadastro/anuncio')}}"> Auncios </a></li>                          
+                          <li><a class="" href="{{URL::to('/admin/cadastro/anuncio')}}"> Auncios </a></li>
                           <li><a class="" href="{{URL::to('/admin/cadastro/banner')}}"> Banners </a></li>
-                          <li><a class="" href="{{URL::to('/admin/cadastro/planos')}}"> Planos </a></li>                          
+                          <li><a class="" href="{{URL::to('/admin/cadastro/planos')}}"> Planos </a></li>
                           <li><a class="" href="{{URL::to('/admin/cadastro/postagen')}}"> Postagens </a></li>
-                          <li><a class="" href="{{URL::to('/admin/cadastro/servicos')}}"> Serviços </a></li>                          
+                          <li><a class="" href="{{URL::to('/admin/cadastro/servicos')}}"> Serviços </a></li>
                           <li><a class="" href="{{URL::to('/admin/cadastro/usuarios')}}"> Usuario </a></li>
-
                       </ul>
                   </li>       
                   <li class="sub-menu">
@@ -55,25 +54,30 @@
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_table"></i>
-                          <span>Tables</span>
+                          <span>Cadastrados</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="{{URL::to('/admin/pagina/basic_table')}}">Basic Table</a></li>
+                          <li><a class="" href="{{URL::to('/admin/cadastrados/anuncio')}}"> Auncios </a></li>
+                          <li><a class="" href="{{URL::to('/admin/cadastrados/banner')}}"> Banners </a></li>
+                          <li><a class="" href="{{URL::to('/admin/cadastrados/planos')}}"> Planos </a></li>
+                          <li><a class="" href="{{URL::to('/admin/cadastrados/postagen')}}"> Postagens </a></li>
+                          <li><a class="" href="{{URL::to('/admin/cadastrados/servicos')}}"> Serviços </a></li>
+                          <li><a class="" href="{{URL::to('/admin/cadastrados/usuarios')}}"> Usuario </a></li>
                       </ul>
                   </li>
                   
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_documents_alt"></i>
-                          <span>Pages</span>
+                          <span>Empresa</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">                          
-                          <li><a class="" href="{{URL::to('/admin/pagina/profile')}}">Profile</a></li>
-                          <li><a class="" href="{{URL::to('/admin/pagina/login')}}"><span>Login Page</span></a></li>
-                          <li><a class="" href="{{URL::to('/admin/pagina/blank')}}">Blank Page</a></li>
-                          <li><a class="" href="{{URL::to('/admin/pagina/404')}}">404 Error</a></li>
+                          <li><a class="" href="{{URL::to('/admin/empresa/')}}">Empresa</a></li>
+                          <li><a class="" href="{{URL::to('/admin/empresa/login')}}"><span>Login Page</span></a></li>
+                          <li><a class="" href="{{URL::to('/admin/empresa/blank')}}">Blank Page</a></li>
+                          <li><a class="" href="{{URL::to('/admin/empresa/404')}}">404 Error</a></li>
                       </ul>
                   </li>
                   

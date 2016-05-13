@@ -9,6 +9,8 @@
 						<li><i class="fa fa-home"></i><a href="{{URL::to('/admin/home')}}">Home</a></li>
 						<li><i class="icon_document_alt"></i>Cadastro</li>
 						<li><i class="fa fa-file-text-o"></i>Banner</li>
+						<a class="pull-right" href="javascript:window.history.go(-1)">Voltar</a>
+
 					</ol>
 				</div>
 			</div>
@@ -17,9 +19,10 @@
 						<div class="row">						
 							 <section class="panel">
 		                          <div class="panel-body">
-		                              <form class="form-horizontal " method="get">
+		                             {!! Form::open(['route'=>['admin.cadastro.banner.store']]) !!}
 											<div class="form-group">	
-											<div class="col-lg-2"></div>									
+											<div class="col-lg-2"></div>	
+																			
 												<div class="col-lg-8">
 												<label for="nome">Nome</label>
 												<input class="form-control m-bot15" type="text" name="nome" placeholder="Nome">
@@ -37,7 +40,7 @@
 			                                 </div>
 			                                 <div class="col-lg-2"></div>
 		                                  </div>
-		                              </form>
+		                              {!! Form::close() !!}
 		                          </div>
 		                      </section>
 						</div> 

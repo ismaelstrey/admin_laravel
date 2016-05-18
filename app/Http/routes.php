@@ -29,5 +29,5 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.Paginas.index');
 });
-Route::get('/home', 'HomeController@index');
+Route::get('/admin/home', 'HomeController@index');
 

@@ -22,13 +22,22 @@
                           <table class="table table-hover">
                           	<thead>
                           		<tr>
-                          			<th></th>
+                          			<th>Nome</th>
+                          			<th>Site</th>
+                          			<th>Telefone</th>
+                          			<th>Cidade</th>
                           		</tr>
                           	</thead>
                           	<tbody>
-                          		<tr>
-                          			<td></td>
+                          	@foreach ($empresas as $empresa)
+                          		<tr>                          			
+                          			<td>{{$empresa->nome}}</td>
+                          			<td>{{$empresa->site}}</td>
+                          			<td>{{$empresa->telefone}}</td>
+                          			<td>{{$empresa->cidade}}</td>                      			
+                          			
                           		</tr>
+                          		@endforeach
                           	</tbody>
                           </table>
                           </div>

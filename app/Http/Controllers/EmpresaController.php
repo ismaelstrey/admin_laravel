@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Empresa;
 use App\Http\Requests;
 
 class EmpresaController extends Controller
@@ -15,7 +15,8 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return view('admin.empresa.index');//
+         $empresas = Empresa::all();
+        return view('admin.empresa.index',compact('empresas'));//
     }
 
     /**
@@ -36,7 +37,9 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        Empresa::create($dados);
+        return redirect('/admin/empresa');
     }
 
     /**

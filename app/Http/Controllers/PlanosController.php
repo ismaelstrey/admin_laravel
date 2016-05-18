@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Planos;
 use App\Http\Requests;
 
 class PlanosController extends Controller
@@ -15,7 +15,8 @@ class PlanosController extends Controller
      */
     public function index()
     {
-        return view('admin.Cadastro.planos');
+        $planos = Planos::all();
+        return view('admin.Cadastro.index.planos',compact('planos'));
     }
 
     /**
@@ -25,7 +26,7 @@ class PlanosController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin.Cadastro.planos'); 
     }
 
     /**
@@ -36,7 +37,9 @@ class PlanosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $dados = $request->all();
+        Planos::create($dados);
+        return redirect('/admin/cadastro/planos');
     }
 
     /**

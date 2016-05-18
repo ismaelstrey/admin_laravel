@@ -19,7 +19,7 @@
 						<div class="row">						
 							 <section class="panel">
 		                          <div class="panel-body">
-                 {!! Form::open(['route'=>['admin.cadastro.banner.store']]) !!}
+                 {!! Form::open(['route'=>['admin.empresa.store']]) !!}
 						<div class="form-group">	
 						<div class="col-lg-2"></div>	
 														
@@ -39,7 +39,7 @@
 							<label for="site">Site</label>
 							<input class="form-control m-bot15" type="text" name="site" placeholder="Site">
 							<label for="logo">Imagem</label>
-							{!! Form::file('logo', ['class'=>'form-control input-sm m-bot15']) !!}
+							{!! Form::file('img', ['class'=>'form-control input-sm m-bot15']) !!}
 							
 							<label for="descricao">Descrição</label>
 							<textarea name="descricao" class="form-control ckeditor" rows="6"></textarea>

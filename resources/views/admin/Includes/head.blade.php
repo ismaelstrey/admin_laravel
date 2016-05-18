@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 
     <title>Creative - Bootstrap Admin Template</title>
 
-        <!-- Bootstrap CSS -->    
+        <!-- Bootstrap CSS -->
         {{ Html::style('assets/admin/css/bootstrap.min.css') }}
         {{ Html::style('assets/admin/css/bootstrap-theme.css') }}
         <!-- bootstrap theme -->
@@ -19,7 +19,7 @@
         <!-- font icon -->
         {{ Html::style('assets/admin/css/font-awesome.min.css') }}
 
-        {{ Html::style('assets/admin/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css') }}  
+        {{ Html::style('assets/admin/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css') }}
         <!-- full calendar css-->
         {{ Html::style('assets/admin/assets/fullcalendar/fullcalendar/fullcalendar.css') }}
         {{ Html::style('assets/admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css') }}

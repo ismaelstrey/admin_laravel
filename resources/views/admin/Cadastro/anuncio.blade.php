@@ -4,79 +4,60 @@
      <section class="wrapper">
      		<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-file-text-o"></i> Form elements</h3>
+					<h3 class="page-header"><i class="fa fa-file-text-o"></i> Cadastro de anuncio</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="{{URL::to('/admin/home')}}">Home</a></li>
-						<li><i class="icon_document_alt"></i>Cadastro</li>
+						<li><i class="icon_document_alt"></i><a href="{{URL::to('/admin/cadastro')}}">Cadastro</a></li>
 						<li><i class="fa fa-file-text-o"></i>Anuncio</li>
+						<a class="pull-right" href="javascript:window.history.go(-1)">Voltar</a>
 					</ol>
 				</div>
 			</div>
 				<div class="row">
-					<div class="col-lg-12">
+				<div class="col-lg-12">
 						<div class="row">
-							  <div class="col-lg-6">
-							         <section class="panel">
-						              <header class="panel-heading">
-						                  Cadstro de Anuncios
-						              </header>
-						              <div class="panel-body">
-						                  <form class="form-horizontal " action="#">
-						                      <!--date picker start-->
-						                      <div class="form-group">
-						                          <label class="control-label col-sm-4">Default Datepicker</label>
-						                          <div class="col-sm-6">
-						                              <input id="cp1" type="text" value="28-10-2013" size="16" class="form-control">
-						                          </div>
-						                      </div>
-						                      <div class="form-group">
-						                          <label class="control-label col-sm-4">Starts with years view</label>
-						                          <div class="col-sm-6">
+							 <section class="panel">
+		                          <div class="panel-body">
+		                             {!! Form::open(['route'=>['admin.cadastro.anuncio.store']]) !!}
+		                             <?php $data = date("d/m/Y")?>
+											<div class="form-group">
+											<div class="col-lg-2"></div>
 
+											<div class="col-lg-8">
+												<div class="row">
+												<div class="col-lg-4">
+													{!! Form::label('data_atual', 'Data de Cadastro', ['class'=>'label-control']) !!}
+													{!! Form::text('data_atual',$data ,['disabled'=>'disabled','class'=>'form-control']) !!}
+												</div>
+												<div class="col-lg-4">
+													{!! Form::label('data_expiracao', 'Data de Expiração', ['class'=>'label-control']) !!}
+													{!! Form::date('data_expiracao',NULL,['class'=>'form-control']) !!}
+												</div>
+												<div class="col-lg-4">
+													{!! Form::label('local', 'Local', ['class'=>'label-control']) !!}
+													{!! Form::select('local', ['1'=>'Vip','2'=>'Normal'], NULL, ['class'=>'form-control']) !!}
+												</div>
+											</div>
+											{!! Form::label('nome', 'Nome', ['class'=>'label-control']) !!}
+											{!! Form::text('nome', NULL, ['class'=>'form-control']) !!}
 
-						                              <div class="input-append date" id="dpYears" data-date="18-06-2013"
-						                                   data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-						                                  <input class="form-control" size="16" type="text" value="28-06-2013" readonly>
-						                                  <span class="add-on"><i class="icon-calendar"></i></span>
-						                              </div>
-						                          </div>
-						                      </div>
+											{!! Form::label('link', 'Link', ['class'=>'label-control']) !!}
+											{!! Form::text('link', NULL, ['class'=>'form-control']) !!}
 
-						                      <div class="form-group">
-						                          <label class="control-label col-sm-4"> Date Ranges</label>
-						                          <div class="col-sm-6">
-						                              <div class="input-prepend">
-						                                  <input id="reservation" type="text" class=" form-control" />
-						                              </div>
-						                          </div>
-						                      </div>
-						                      <!--date picker end-->
-
-						                      <!--color picker start-->
-						                      <div class="form-group">
-						                          <label class="control-label col-sm-4">Default</label>
-
-						                          <div class="col-sm-5">
-						                              <input type="text" value="#CCCCCC" class="cp1 form-control">
-						                          </div>
-						                      </div>
-						                      <div class="form-group">
-						                          <label class="control-label col-sm-4">RGBA</label>
-
-						                          <div class="col-sm-5">
-						                              <input type="text" data-color-format="rgba" value="rgb(255,255,255,1)" class="cp2 form-control">
-						                          </div>
-						                      </div>
-						                      <!--color picker end-->
-						                  </form>
-						              </div>
-						          </section>
-						        </div>
-						    <div class="col-lg-6">
-							</div>
-						</div> 
+											{!! Form::label('anuncio', 'Anuncio', ['class'=>'label-control']) !!}
+											{!! Form::textarea('anuncio', NULL, ['class'=>'form-control']) !!}
+											<hr>
+												{!! Form::submit('Cadastrar', ['class'=>'btn btn-info pull-right']) !!}
+												{!! Form::reset(' Cancelar ', ['class'=>'btn btn-danger pull-right']) !!}
+											</div>
+			                                 <div class="col-lg-2"></div>
+		                                  </div>
+		                              {!! Form::close() !!}
+		                          </div>
+		                      </section>
+						</div>
 					</div>
-				</div> 
+				</div>
 	</section>
 </section>
 @stop

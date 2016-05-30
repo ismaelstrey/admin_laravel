@@ -17,26 +17,9 @@
 						<div class="row">						
 							 <section class="panel">
 		                          <div class="panel-body">
-		                              <form class="form-horizontal " method="get">
-											<div class="form-group">	
-																			
-											<div class="col-lg-12">
-											<label for="nome">Título</label>
-											<input class="form-control m-bot15" type="text" name="nome" placeholder="Nome">
-											<label for="link">Descrição</label>
-											<input class="form-control m-bot15" type="text" name="descricao" placeholder="Descrição">
-											<label for="link">Tags</label>
-											<input class="form-control m-bot15" type="text" name="tags" placeholder="Tags">		
-											<label for="descricao">Postagen</label>
-											<textarea name="postagen" class="form-control ckeditor" rows="10"></textarea>
-											<hr>	
-											{!! Form::submit(' Cadastrar ', ['class'=>'btn btn-success pull-right']) !!}
-											{!! Form::reset(' Cancelar ', ['class'=>'btn btn-danger pull-right']) !!}
-												
-			                                 </div>
-			                                
-		                                  </div>
-		                              </form>
+			{!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.postagen.store', 'class' => 'form-horizontal']) !!}
+					@include('admin.Cadastro.forms.postagen')
+			{!! Form::close() !!}		                           
 		                          </div>
 		                      </section>
 						</div> 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Postagen;
 use App\Http\Requests;
 
 class PostagensController extends Controller
@@ -15,7 +15,8 @@ class PostagensController extends Controller
      */
     public function index()
     {
-        return view('admin.Cadastro.postagen');
+        $postagens = Postagen::all();
+        return view('admin.Cadastro.index.postagen', compact('postagens'));
     }
 
     /**
@@ -25,7 +26,7 @@ class PostagensController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.Cadastro.postagen');
     }
 
     /**
@@ -36,7 +37,9 @@ class PostagensController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        Postagen::create($dados);
+        return redirect('/admin/cadastro/postagen');
     }
 
     /**

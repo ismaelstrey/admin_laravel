@@ -17,15 +17,19 @@ Route::resource('/admin/cadastro/planos', 'PlanosController');
 Route::resource('/admin/cadastro/postagen', 'PostagensController');
 Route::resource('/admin/cadastro/servicos', 'ServicosController');
 Route::resource('/admin/cadastro/usuarios', 'UsuarioController');
+
+
 Route::resource('/admin/cadastrados', 'CadastradosController');
 Route::resource('/admin/empresa', 'EmpresaController');
+Route::resource('/', 'HomeController');
 
 
 
 
-Route::get('/', function () {
-    return view('admin.Paginas.index');
-});
+// Route::get('/', function () {
+//     return view('front.index');
+// });
+
 Route::get('/admin', function () {
     return view('admin.Paginas.index');
 });

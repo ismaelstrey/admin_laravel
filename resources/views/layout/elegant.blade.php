@@ -1,0 +1,6 @@
+@include('layout.elegant.header')
+@include('layout.elegant.navbar')
+@yield('sobre')
+@yield('event')
+@yield('content')
+@include('layout.elegant.footer')

@@ -3,9 +3,6 @@
   <body>
   <!-- container section start -->
   <section id="container" class="">
-     
-      
-     @include('admin.includes.head')
       @include('admin.includes.header')
       <!--sidebar start-->
      @include('admin.includes.sidebar')

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Banner;
+use App\Servicos;
 use App\Http\Requests;
 
 class HomeController extends Controller
@@ -15,7 +16,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $dados['banner'] = Banner::all();
+        $dados['servicos'] = Servicos::all();
+        //dd($dados);
+        return view('front.index',compact('dados'));
     }
 
     /**

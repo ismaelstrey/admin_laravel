@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Servicos;
 use App\Http\Requests;
 
 class ServicosController extends Controller
@@ -15,7 +15,8 @@ class ServicosController extends Controller
      */
     public function index()
     {
-        return view('admin.Cadastro.servicos');
+        $servicos = Servicos::all();
+        return view('admin.Cadastro.index.servicos', compact('servicos'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ServicosController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin.Cadastro.servicos');
     }
 
     /**
@@ -36,7 +37,9 @@ class ServicosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $servicos = $request->all();
+        Servicos::create($servicos);
+        return redirect('/admin/cadastro/servicos');
     }
 
     /**

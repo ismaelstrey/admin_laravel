@@ -7,6 +7,7 @@
 	<label for="link">Tags</label>
 	<input class="form-control m-bot15" type="text" name="tags" placeholder="Tags">		
 	<label for="link">Icone</label>
+	<a href="{{ url('http://fontawesome.io/icons/') }}"> Icones</a>
 	<input class="form-control m-bot15" type="text" name="icone" placeholder="Icone">	
 	<label for="descricao">Serviço</label>
 	<textarea name="servico" class="form-control ckeditor" rows="10"></textarea>

@@ -10,7 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::resource('/admin', 'AdminController');
+Route::resource('/admin/empresa', 'EmpresaController');
 Route::resource('/admin/cadastro/anuncio', 'AnunciosController');
 Route::resource('/admin/cadastro/banner', 'BannersController');
 Route::resource('/admin/cadastro/planos', 'PlanosController');
@@ -18,9 +19,6 @@ Route::resource('/admin/cadastro/postagen', 'PostagensController');
 Route::resource('/admin/cadastro/servicos', 'ServicosController');
 Route::resource('/admin/cadastro/usuarios', 'UsuarioController');
 
-
-Route::resource('/admin/cadastrados', 'CadastradosController');
-Route::resource('/admin/empresa', 'EmpresaController');
 Route::resource('/', 'HomeController');
 
 
@@ -30,8 +28,8 @@ Route::resource('/', 'HomeController');
 //     return view('front.index');
 // });
 
-Route::get('/admin', function () {
-    return view('admin.Paginas.index');
-});
 Route::get('/admin/home', 'HomeController@index');
 
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

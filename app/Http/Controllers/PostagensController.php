@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Postagen;
 use App\Http\Requests;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Http\Response;
+
 
 class PostagensController extends Controller
 {
@@ -40,8 +45,24 @@ class PostagensController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+
     {
-        $dados = $request->all();
+ $dados = $request->all();
+         if($request->hasFile('imagem')){         
+  
+            $image = $request->File('imagem');
+            $filename  = time().'.'. $image->getClientOriginalExtension();
+            $destino = '/images/Uploads/'.$filename;
+            $thunb = base_path().'/public/images/Uploads/thunb/'.$filename;
+            $path = base_path().'/public'.$destino;                    
+            Image::make($image->getRealPath())->resize(800, 340)->save($path);
+            Image::make($image->getRealPath())->resize(100, 50)->save($thunb);
+
+            $dados['imagem'] = $filename;
+               
+           }
+
+       
         Postagen::create($dados);
         return redirect('/admin/cadastro/postagen');
     }

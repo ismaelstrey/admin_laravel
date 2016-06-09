@@ -7,7 +7,12 @@
         {!! Form::text('nome', null, ['class' => 'form-control', 'required' => 'required']) !!}
         <small class="text-danger">{{ $errors->first('nome') }}</small>
     </div>
-
+ <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
+        {!! Form::label('imagem', 'Imagem') !!}
+        {!! Form::file('imagem', ['class' => 'form-control',]) !!}
+        
+        <small class="text-danger">{{ $errors->first('nome') }}</small>
+    </div>
     <div class="form-group{{ $errors->has('descricao') ? ' has-error' : '' }}">
         {!! Form::label('descricao', 'Descrição') !!}
         {!! Form::text('descricao', null, ['class' => 'form-control', 'required' => 'required']) !!}

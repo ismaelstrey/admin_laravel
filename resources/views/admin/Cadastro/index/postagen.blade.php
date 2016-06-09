@@ -21,9 +21,11 @@
                     <table class="table table-hover branco">
                       <thead>
                         <tr>
-                          <th>Nome</th>
+                          <th><i class="icon_profile"></i> Nome</th>
                           <th>Tags</th>
                           <th>Descriçao</th>
+                          <th>Imagen</th>
+                          <th><i class="icon_cogs"></i> Ação</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -32,6 +34,13 @@
                           <td>{{$postagen->nome}}</td>
                           <td>{{$postagen->tags}}</td>
                           <td>{{$postagen->descricao}}</td>
+                          <td>{{Html::image('/images/Uploads/thunb/'.$postagen->imagem)}}</td>
+                          <td> 
+                    <div class="btn-group">                              
+                            <a class="btn btn-success" href="#" title="Visualizar {{$postagen->nome}}" ><i class="icon_check_alt2"></i></a>
+                            <a class="btn btn-danger" href="#" title="Deletar {{$postagen->nome}}" ><i class="icon_close_alt2"></i></a>
+                    </div>
+                            </td>
                         </tr>
                         @endforeach
                       </tbody>

@@ -17,7 +17,7 @@
 						<div class="row">						
 							 <section class="panel">
 		                          <div class="panel-body">
-			{!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.postagen.store', 'class' => 'form-horizontal']) !!}
+			{!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.postagen.store', 'class' => 'form-horizontal','files' => true]) !!}
 					@include('admin.Cadastro.forms.postagen')
 			{!! Form::close() !!}		                           
 		                          </div>

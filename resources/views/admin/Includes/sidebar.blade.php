@@ -27,13 +27,13 @@
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span>UI Fitures</span>
+                          <span>Produtos</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="{{URL::to('/admin/pagina/elementos')}}">Elements</a></li>
-                          <li><a class="" href="{{URL::to('/admin/pagina/buttons')}}">Buttons</a></li>
-                          <li><a class="" href="{{URL::to('/admin/pagina/grids')}}">Grids</a></li>
+                          <li><a class="" href="{{URL::to('/admin/produtos')}}">Cadastrados</a></li>
+                          <li><a class="" href="{{URL::to('/admin/produtos/vendidos')}}">Vendidos</a></li>
+                          <li><a class="" href="{{URL::to('/admin/produtos/estoque')}}">Estoque</a></li>
                       </ul>
                   </li>
                   <li>

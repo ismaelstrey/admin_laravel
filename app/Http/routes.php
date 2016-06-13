@@ -19,16 +19,16 @@ Route::resource('/admin/cadastro/postagen', 'PostagensController');
 Route::resource('/admin/cadastro/servicos', 'ServicosController');
 Route::resource('/admin/cadastro/usuarios', 'UsuarioController');
 
-Route::resource('/', 'HomeController');
+ Route::get('/', 'HomeController@index');
 
 
 
 
 // Route::get('/', function () {
-//     return view('front.index');
+//     return ('teste');
 // });
 
-Route::get('/admin/home', 'HomeController@index');
+Route::get('/admin/home', 'admin/HomeController@index');
 
 Route::auth();
 

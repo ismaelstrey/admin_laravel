@@ -19,7 +19,7 @@
 
     {{ Html::script('assets/admin/js/owl.carousel.js') }}
     <!-- jQuery full calendar -->
-    <<!-- Full Google Calendar - Calendar -->
+    <!-- Full Google Calendar - Calendar -->
     {{ Html::script('assets/admin/js/fullcalendar.min.js') }}
     {{ Html::script('assets/admin/assets/fullcalendar/fullcalendar/fullcalendar.js') }}
     <!--script for this page only-->

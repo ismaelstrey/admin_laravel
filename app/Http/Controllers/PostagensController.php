@@ -75,7 +75,9 @@ class PostagensController extends Controller
      */
     public function show($id)
     {
-        //
+        $postagen = Postagen::find($id);
+        //dd($postagens);
+        return view('admin.Cadastro.show.postagen', compact('postagen'));
     }
 
     /**
@@ -109,6 +111,18 @@ class PostagensController extends Controller
      */
     public function destroy($id)
     {
-        //
+     $postagen = Postagen::find($id);
+        $filename = $postagen->imagem;
+        $destino = '/images/Uploads/'.$filename;
+        $thunb = base_path().'/public/images/Uploads/thunb/'.$filename;
+        $path = base_path().'/public'.$destino;
+        if (file_exists($path)) {
+          unlink($path); 
+        }if(file_exists($thunb)){
+            unlink($thunb); 
+        }      
+       $deletar = Postagen::destroy($id); 
+       return redirect('/admin/cadastro/postagen');
+    
     }
 }

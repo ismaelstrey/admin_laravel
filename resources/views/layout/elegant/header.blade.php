@@ -13,15 +13,14 @@
     <!-- templatemo 411 dragonfruit -->
     <meta name="author" content="templatemo">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="assets/front/favicon.png" />		
+    <link rel="shortcut icon" href="{{ url('assets/front/favicon.png') }}" />		
     <!-- Font Awesome -->
-    <link href="assets/front/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="assets/front/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Camera -->
-    <link href="assets/front/css/camera.css" rel="stylesheet">
-    <!-- Template  -->
-    <link href="assets/front/css/templatemo_style.css" rel="stylesheet">
+    {{ Html::style('assets/front/css/font-awesome.min.css')}}
+    {{ Html::style('assets/front/css/bootstrap.min.css')}}
+    {{ Html::style('assets/front/css/camera.css')}}
+    {{ Html::style('assets/front/css/templatemo_style.css')}}
+    {{ Html::style('assets/front/css/style.css')}}
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

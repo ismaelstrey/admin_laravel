@@ -301,7 +301,8 @@ function initialize(){
     //define map
     var map;
     //lat lng
-    myLatlng = new google.maps.LatLng(16.8496189,96.1288854);
+    myLatlng = new google.maps.LatLng(-29.577008, -50.777527);
+    
     //define style
     var styles = [
         {
@@ -337,7 +338,7 @@ function initialize(){
     var marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
-        title: 'Welcome to Yangon'
+        title: 'Speed Sul Solução em Informática'
     });
 }
 google.maps.event.addDomListener(window, 'load', initialize);

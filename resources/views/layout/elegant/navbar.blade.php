@@ -15,19 +15,31 @@
     <div id="templatemo_banner_menu">
         <div class="container-fluid">
             <div class="col-xs-4 templatemo_logo">
-            	<a href="#">
-                	<img src="images/logo.png" id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />
+            	<a href="{{ url('/') }}">
+                	<img src="{{ url('images/logo.png') }}" id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />
                 	
                 </a>
             </div>
             <div class="col-sm-8 hidden-xs">
                 <ul class="nav nav-justified">
+                  @if ( url('/') !== url()->current())
+
+                    <li><a  rel="nofollow" href="{{ url('/') }}" class="external-link">Home</a></li>
+                    <li><a rel="nofollow" href="{{ url('/') }}" class="external-link">Sobre</a></li>
+                    <li><a rel="nofollow" href="{{ url('/') }}" class="external-link">Serviços</a></li>
+                    <li><a rel="nofollow" href="{{ url('/') }}" class="external-link">Comentários</a></li>
+                   <!--  <li><a rel="nofollow" href="http://www.google.com" class="external-link">External</a></li> -->
+                    <li><a href="{{ url('/') }}">Contato</a></li>
+                    @else                 
                     <li><a href="#templatemo_banner_slide">Home</a></li>
                     <li><a href="#templatemo_about">Sobre</a></li>
                     <li><a href="#templatemo_events">Serviços</a></li>
                     <li><a href="#templatemo_timeline">Comentários</a></li>
                    <!--  <li><a rel="nofollow" href="http://www.google.com" class="external-link">External</a></li> -->
                     <li><a href="#templatemo_contact">Contato</a></li>
+                    @endif
+
+                    
                  </ul>
             </div>
             <div class="col-xs-8 visible-xs">

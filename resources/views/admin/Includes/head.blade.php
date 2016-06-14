@@ -6,10 +6,10 @@
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="{{Html::image('images/img/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ url('images/img/favicon.png') }}">
     
 
-    <title>Creative - Bootstrap Admin Template</title>
+    <title>Creative - Bootstrap Admin Template </title>
 
         <!-- Bootstrap CSS -->
         {{ Html::style('assets/admin/css/bootstrap.min.css') }}

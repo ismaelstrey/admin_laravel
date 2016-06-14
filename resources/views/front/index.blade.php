@@ -16,12 +16,12 @@
 @section('sobre')
     <div id="templatemo_about" class="container_wapper">
     <div class="container-fluid">
-<h1>Nossa empresa</h1>
+<h1>Nossos serviços</h1>
 @if (isset($dados['servicos']))
     @foreach ($dados['servicos'] as $servico)        
             <div class="col-sm-6 col-md-3 about_icon">
                 <div class="imgwap mission"><i class="fa {{$servico->icone}}"></i></div>
-                <h2>{{$servico->nome}}</h2>
+                <h2><a href="{{ url('empresa/servicos/').'/'.$servico->id }}" title="{{$servico->nome}}">{{$servico->nome}}</a></h2>
                 <p>{{$servico->descricao}}</p>
             </div>
     @endforeach

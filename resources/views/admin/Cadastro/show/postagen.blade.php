@@ -29,25 +29,25 @@
                         </tr>
                       </thead>
                       <tbody>
-                       @foreach ($postagens as $postagen)
+                      
                         <tr>
                           <td>{{$postagen->nome}}</td>
                           <td>{{$postagen->tags}}</td>
                           <td>{{$postagen->descricao}}</td>
                           <td>{{Html::image('/images/Uploads/thunb/'.$postagen->imagem)}}</td>
+                          <td>{{Html::image('/images/Uploads/'.$postagen->imagem)}}</td>
                           <td> 
-                    <div class="btn-group">  
                       
+                    <div class="btn-group">  
 
- 
-  {!! Form::open (['method'=>'DELETE', 'url'=>['admin/cadastro/postagen/'.$postagen->id]]) !!}
-   <a class="btn btn-success icon_check_alt2" href="{{ route('admin.cadastro.postagen.show', ['id'=>$postagen->id]) }}" title="Visualizar {{$postagen->nome}}" ></a>
-            <input type="submit" class="btn btn-danger icon_check_alt2" value= "X"  title="Delete {{$postagen->nome}}">
- {!! Form::close ()  !!}
+
+                      
+  <a class="btn btn-success" href="{{ route('admin.cadastro.postagen.show', ['id'=>$postagen->id]) }}" title="Visualizar {{$postagen->nome}}" ><i class="icon_check_alt2"></i></a>
+  <a class="btn btn-danger" href="{{ route('admin.cadastro.postagen.destroy', ['id'=>$postagen->id]) }}" title="Deletar {{$postagen->nome}}" ><i class="icon_close_alt2"></i></a>
                     </div>
                             </td>
                         </tr>
-                        @endforeach
+                        
                       </tbody>
                     </table>
                   </div>

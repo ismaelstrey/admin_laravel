@@ -15,9 +15,10 @@ Route::resource('/admin/empresa', 'EmpresaController');
 Route::resource('/admin/cadastro/anuncio', 'AnunciosController');
 Route::resource('/admin/cadastro/banner', 'BannersController');
 Route::resource('/admin/cadastro/planos', 'PlanosController');
-Route::resource('/admin/cadastro/postagen', 'PostagensController');
+Route::resource('admin/cadastro/postagen', 'PostagensController');
 Route::resource('/admin/cadastro/servicos', 'ServicosController');
 Route::resource('/admin/cadastro/usuarios', 'UsuarioController');
+Route::get('empresa/recomendacoes', 'PaginasController@index');
 
  Route::get('/', 'HomeController@index');
 
@@ -28,7 +29,7 @@ Route::resource('/admin/cadastro/usuarios', 'UsuarioController');
 //     return ('teste');
 // });
 
-Route::get('/admin/home', 'admin/HomeController@index');
+// Route::get('/admin/home', 'HomeController@index');
 
 Route::auth();
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class RecomendacoesController extends Controller
+class AdminRecomendacoesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class RecomendacoesController extends Controller
      */
     public function index()
     {
-        return('teste');
+
+       return view('admin.Cadastro.index.recomendacoes');
     }
 
     /**

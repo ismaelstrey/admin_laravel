@@ -1,7 +1,7 @@
  <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
+              <ul class="sidebar-menu">
                   <li class="active">
 
                       <a class="" href="{{URL::to('/admin/home')}}">
@@ -23,7 +23,7 @@
                           <li><a class="" href="{{URL::to('/admin/cadastro/servicos')}}"> Serviços </a></li>
                           <li><a class="" href="{{URL::to('/admin/cadastro/usuarios')}}"> Usuario </a></li>
                       </ul>
-                  </li>       
+                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
@@ -42,15 +42,15 @@
                           <span>Widgets</span>
                       </a>
                   </li>
-                  <li>                     
-                      <a class="" href="{{URL::to('/admin/pagina/chart-chartjs')}}">
+                  <li>
+                      <a class="" href="{{URL::to('/admin/recomendacoes')}}">
                           <i class="icon_piechart"></i>
-                          <span>Charts</span>
-                          
+                          <span>Recomendações</span>
+
                       </a>
-                                         
+
                   </li>
-                             
+
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_table"></i>
@@ -66,21 +66,21 @@
                           <li><a class="" href="{{URL::to('/admin/cadastrados/usuarios')}}"> Usuario </a></li>
                       </ul>
                   </li>
-                  
+
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_documents_alt"></i>
                           <span>Empresa</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-                      <ul class="sub">                          
+                      <ul class="sub">
                           <li><a class="" href="{{URL::to('/admin/empresa/')}}">Empresa</a></li>
                           <li><a class="" href="{{URL::to('/admin/empresa/login')}}"><span>Login Page</span></a></li>
                           <li><a class="" href="{{URL::to('/admin/empresa/blank')}}">Blank Page</a></li>
                           <li><a class="" href="{{URL::to('/admin/empresa/404')}}">404 Error</a></li>
                       </ul>
                   </li>
-                  
+
               </ul>
               <!-- sidebar menu end-->
           </div>

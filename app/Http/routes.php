@@ -18,7 +18,8 @@ Route::resource('/admin/cadastro/planos', 'PlanosController');
 Route::resource('admin/cadastro/postagen', 'PostagensController');
 Route::resource('/admin/cadastro/servicos', 'ServicosController');
 Route::resource('/admin/cadastro/usuarios', 'UsuarioController');
-Route::get('empresa/recomendacoes', 'PaginasController@index');
+//Route::get('empresa/recomendacoes', 'PaginasController@index');
+Route::resource('/admin/cadastro/recomendacoes','AdminRecomendacoesController');
 
  Route::get('/', 'HomeController@index');
 

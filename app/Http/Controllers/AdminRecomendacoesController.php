@@ -51,7 +51,8 @@ class AdminRecomendacoesController extends Controller
      */
     public function show($id)
     {
-        //
+        $recomendacao = Recomendacoes::find($id);
+        return view('admin.Cadastro.show.recomendacoes', compact('recomendacao'));
     }
 
     /**

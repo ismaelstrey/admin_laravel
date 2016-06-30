@@ -13,7 +13,7 @@
 
 
 
-				<a class="pull-right" href="{{URL::to('/admin/cadastro/postagen/create')}}">Novo</a>
+				<a class="pull-right" href="{{URL::to('/admin/cadastro/recomendacoes/create')}}">Novo</a>
                </div>
 			</div>
               <div class="row">
@@ -21,31 +21,22 @@
                     <table class="table table-hover branco">
                       <thead>
                         <tr>
-                          <th><i class="icon_profile"></i> Nome</th>
-                          <th>Tags</th>
-                          <th>Descriçao</th>
+                          <th><i class="icon_profile"></i> Titulo</th>
+                          <th>Criação</th>
+                          <th>Atualização</th>
                           <th>Imagen</th>
-                          <th><i class="icon_cogs"></i> Ação</th>
+                          <th><i class="icon_cogs"></i> Mensagem</th>
                         </tr>
                       </thead>
                       <tbody>
 
                         <tr>
-                          <td>{{$postagen->nome}}</td>
-                          <td>{{$postagen->tags}}</td>
-                          <td>{{$postagen->descricao}}</td>
-                          <td>{{Html::image('/images/Uploads/thunb/'.$postagen->imagem)}}</td>
-                          <td>{{Html::image('/images/Uploads/'.$postagen->imagem)}}</td>
-                          <td>
-
-                    <div class="btn-group">
+                          <td>{{$recomendacao->titulo}}</td>
+                          <td>{{$recomendacao->created_at}}</td>
+                          <td>{{$recomendacao->updated_at}}</td>
+                          <td>{{$recomendacao->mensagem}}</td>
 
 
-
-  <a class="btn btn-success" href="{{ route('admin.cadastro.postagen.show', ['id'=>$postagen->id]) }}" title="Visualizar {{$postagen->nome}}" ><i class="icon_check_alt2"></i></a>
-  <a class="btn btn-danger" href="{{ route('admin.cadastro.postagen.destroy', ['id'=>$postagen->id]) }}" title="Deletar {{$postagen->nome}}" ><i class="icon_close_alt2"></i></a>
-                    </div>
-                            </td>
                         </tr>
 
                       </tbody>

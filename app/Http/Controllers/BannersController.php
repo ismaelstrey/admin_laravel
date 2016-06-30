@@ -20,7 +20,7 @@ class BannersController extends Controller
      */
     public function index()
     {
-        
+
         $banners = Banner::all();
          return view('admin.Cadastrados.banner',compact('banners'));
     }
@@ -32,7 +32,7 @@ class BannersController extends Controller
      */
     public function create()
     {
-        return view('admin.Cadastro.banner');
+        return view('admin.Cadastro.Create.banner');
     }
 
     /**

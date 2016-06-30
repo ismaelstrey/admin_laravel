@@ -30,7 +30,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        return view('admin.empresa.empresa');//
+        return view('admin.empresa.Create.empresa');//
     }
 
     /**

@@ -31,7 +31,7 @@ class PlanosController extends Controller
      */
     public function create()
     {
-       return view('admin.Cadastro.planos'); 
+       return view('admin.Cadastro.Create.planos');
     }
 
     /**

@@ -38,13 +38,10 @@
                           <td>{{Html::image('/images/uploads/'.$postagen->imagem)}}</td>
                           <td>
 
-                    <div class="btn-group">
-
-
-
-  <a class="btn btn-success" href="{{ route('admin.cadastro.postagen.show', ['id'=>$postagen->id]) }}" title="Visualizar {{$postagen->nome}}" ><i class="icon_check_alt2"></i></a>
-  <a class="btn btn-danger" href="{{ route('admin.cadastro.postagen.destroy', ['id'=>$postagen->id]) }}" title="Deletar {{$postagen->nome}}" ><i class="icon_close_alt2"></i></a>
-                    </div>
+                  <div class="btn-group">
+                      <a class="btn btn-success" href="{{ route('admin.cadastro.postagen.show', ['id'=>$postagen->id]) }}" title="Visualizar {{$postagen->nome}}" ><i class="icon_check_alt2"></i></a>
+                      <a class="btn btn-danger" href="{{ route('admin.cadastro.postagen.destroy', ['id'=>$postagen->id]) }}" title="Deletar {{$postagen->nome}}" ><i class="icon_close_alt2"></i></a>
+                  </div>
                             </td>
                         </tr>
 

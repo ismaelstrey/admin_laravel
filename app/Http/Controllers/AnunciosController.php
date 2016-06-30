@@ -26,7 +26,7 @@ class AnunciosController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function create() {
-		return view('admin.Cadastro.anuncio');
+		return view('admin.Cadastro.Create.anuncio');
 	}
 
 	/**
@@ -49,7 +49,8 @@ class AnunciosController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($id) {
-		//
+		$anuncio = Anuncio::find($id);
+		return view('admin.Cadastro.show.anuncio', compact('anuncio'));
 	}
 
 	/**

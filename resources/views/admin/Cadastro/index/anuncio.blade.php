@@ -24,6 +24,7 @@
                           <th>Nome</th>
                           <th>Data de cadastro</th>
                           <th>Data de Expiração</th>
+                           <th><i class="icon_cogs"></i> Ação</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -32,6 +33,14 @@
                           <td>{{$anuncio->nome}}</td>
                           <td>{{$anuncio->created_at}}</td>
                           <td>{{$anuncio->data_expiracao}}</td>
+   <td>
+                    <div class="btn-group">
+  {!! Form::open (['method'=>'DELETE', 'url'=>['admin/cadastro/anuncio/'.$anuncio->id]]) !!}
+   <a class="btn btn-success icon_check_alt2" href="{{ route('admin.cadastro.anuncio.show', ['id'=>$anuncio->id]) }}" title="Visualizar {{$anuncio->nome}}" ></a>
+            <input type="submit" class="btn btn-danger icon_check_alt2" value= "X"  title="Delete {{$anuncio->nome}}">
+ {!! Form::close ()  !!}
+                    </div>
+                            </td>
                         </tr>
                         @endforeach
                       </tbody>

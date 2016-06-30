@@ -34,12 +34,9 @@
                           <td>{{$postagen->nome}}</td>
                           <td>{{$postagen->tags}}</td>
                           <td>{{$postagen->descricao}}</td>
-                          <td>{{Html::image('/images/Uploads/thunb/'.$postagen->imagem)}}</td>
-                          <td> 
-                    <div class="btn-group">  
-                      
-
- 
+                          <td>{{Html::image('/images/uploads/thunb/'.$postagen->imagem)}}</td>
+                          <td>
+                    <div class="btn-group">
   {!! Form::open (['method'=>'DELETE', 'url'=>['admin/cadastro/postagen/'.$postagen->id]]) !!}
    <a class="btn btn-success icon_check_alt2" href="{{ route('admin.cadastro.postagen.show', ['id'=>$postagen->id]) }}" title="Visualizar {{$postagen->nome}}" ></a>
             <input type="submit" class="btn btn-danger icon_check_alt2" value= "X"  title="Delete {{$postagen->nome}}">

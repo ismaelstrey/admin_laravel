@@ -29,25 +29,25 @@
                         </tr>
                       </thead>
                       <tbody>
-                      
+
                         <tr>
                           <td>{{$postagen->nome}}</td>
                           <td>{{$postagen->tags}}</td>
                           <td>{{$postagen->descricao}}</td>
-                          <td>{{Html::image('/images/Uploads/thunb/'.$postagen->imagem)}}</td>
-                          <td>{{Html::image('/images/Uploads/'.$postagen->imagem)}}</td>
-                          <td> 
-                      
-                    <div class="btn-group">  
+                          <td>{{Html::image('/images/uploads/thunb/'.$postagen->imagem)}}</td>
+                          <td>{{Html::image('/images/uploads/'.$postagen->imagem)}}</td>
+                          <td>
+
+                    <div class="btn-group">
 
 
-                      
+
   <a class="btn btn-success" href="{{ route('admin.cadastro.postagen.show', ['id'=>$postagen->id]) }}" title="Visualizar {{$postagen->nome}}" ><i class="icon_check_alt2"></i></a>
   <a class="btn btn-danger" href="{{ route('admin.cadastro.postagen.destroy', ['id'=>$postagen->id]) }}" title="Deletar {{$postagen->nome}}" ><i class="icon_close_alt2"></i></a>
                     </div>
                             </td>
                         </tr>
-                        
+
                       </tbody>
                     </table>
                   </div>

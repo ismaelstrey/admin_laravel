@@ -24,6 +24,7 @@
                           <th>Nome</th>
                           <th>Data de cadastro</th>
                           <th>Data de Expiração</th>
+                           <th><i class="icon_cogs"></i> Ação</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -32,6 +33,14 @@
                           <td>{{$plano->nome}}</td>
                           <td>{{$plano->velocidade}}</td>
                           <td>{{$plano->created_at}}</td>
+                             <td>
+                    <div class="btn-group">
+  {!! Form::open (['method'=>'DELETE', 'url'=>['admin/cadastro/plano/'.$plano->id]]) !!}
+   <a class="btn btn-success icon_check_alt2" href="{{ route('admin.cadastro.plano.show', ['id'=>$plano->id]) }}" title="Visualizar {{$plano->nome}}" ></a>
+            <input type="submit" class="btn btn-danger icon_check_alt2" value= "X"  title="Delete {{$plano->nome}}">
+ {!! Form::close ()  !!}
+                    </div>
+                            </td>
                         </tr>
                         @endforeach
                       </tbody>

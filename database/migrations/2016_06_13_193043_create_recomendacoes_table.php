@@ -15,9 +15,8 @@ class CreateRecomendacoesTable extends Migration
         Schema::create('recomendacoes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
-            $table->longText('menssagem');
-            $table->integer('id_nome')->unsigned();
-            $table->foreign('id_nome')->references('id')->on('users');
+            $table->longText('mensagem');
+            $table->integer('id_nome');
             $table->timestamps();
         });
     }
@@ -29,7 +28,7 @@ class CreateRecomendacoesTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign('id_nome');
+
         Schema::drop('recomendacoes');
     }
 }

@@ -1,34 +1,18 @@
 
 
 <div class="col-lg-12">
+        {!! Form::hidden('id_nome', Auth::user()->id )!!}
 
-    <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
-        {!! Form::label('nome', 'Nome') !!}
-        {!! Form::text('nome', null, ['class' => 'form-control', 'required' => 'required']) !!}
-        <small class="text-danger">{{ $errors->first('nome') }}</small>
-    </div>
- <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
-        {!! Form::label('imagem', 'Imagem') !!}
-        {!! Form::file('imagem', ['class' => 'form-control',]) !!}
-
-        <small class="text-danger">{{ $errors->first('nome') }}</small>
-    </div>
-    <div class="form-group{{ $errors->has('descricao') ? ' has-error' : '' }}">
-        {!! Form::label('descricao', 'Descrição') !!}
-        {!! Form::text('descricao', null, ['class' => 'form-control', 'required' => 'required']) !!}
-        <small class="text-danger">{{ $errors->first('descricao') }}</small>
+    <div class="form-group{{ $errors->has('titulo') ? ' has-error' : '' }}">
+        {!! Form::label('titulo', 'Título') !!}
+        {!! Form::text('titulo', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        <small class="text-danger">{{ $errors->first('titulo') }}</small>
     </div>
 
-    <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
-        {!! Form::label('tags', 'Tags') !!}
-        {!! Form::text('tags', null, ['class' => 'form-control', 'required' => 'required']) !!}
-        <small class="text-danger">{{ $errors->first('tags') }}</small>
-    </div>
-
-    <div class="form-group{{ $errors->has('postagen') ? ' has-error' : '' }}">
-        {!! Form::label('postagen', 'Postagen') !!}
-        {!! Form::textarea('postagen', null, ['class' => 'form-control ckeditor', 'required' => 'required']) !!}
-        <small class="text-danger">{{ $errors->first('postagen') }}</small>
+    <div class="form-group{{ $errors->has('mensagem') ? ' has-error' : '' }}">
+        {!! Form::label('mensagem', 'Mensagem') !!}
+        {!! Form::textarea('mensagem', null, ['class' => 'form-control ckeditor', 'required' => 'required']) !!}
+        <small class="text-danger">{{ $errors->first('menssagem') }}</small>
     </div>
 
     <div class="btn-group pull-right">

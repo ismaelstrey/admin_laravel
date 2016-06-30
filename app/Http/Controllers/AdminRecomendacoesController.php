@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Recomendacoes;
 use App\Http\Requests;
 
 class AdminRecomendacoesController extends Controller
@@ -15,8 +15,8 @@ class AdminRecomendacoesController extends Controller
      */
     public function index()
     {
-
-       return view('admin.Cadastro.index.recomendacoes');
+        $recomendacoes = Recomendacoes::all();
+        return view('admin.Cadastro.index.recomendacoes', compact('recomendacoes'));
     }
 
     /**
@@ -26,7 +26,7 @@ class AdminRecomendacoesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.Cadastro.Create.recomendacoes');
     }
 
     /**
@@ -37,7 +37,10 @@ class AdminRecomendacoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+//dd($dados);
+        Recomendacoes::create($dados);
+       return redirect('/admin/cadastro/recomendacoes');
     }
 
     /**
@@ -82,6 +85,7 @@ class AdminRecomendacoesController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $deletar = Recomendacoes::destroy($id);
+       return redirect('/admin/cadastro/recomendacoes');
     }
 }

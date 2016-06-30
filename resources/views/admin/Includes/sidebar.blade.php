@@ -43,7 +43,7 @@
                       </a>
                   </li>
                   <li>
-                      <a class="" href="{{URL::to('/admin/recomendacoes')}}">
+                      <a class="" href="{{URL::to('/admin/cadastro/recomendacoes')}}">
                           <i class="icon_piechart"></i>
                           <span>Recomendações</span>
 

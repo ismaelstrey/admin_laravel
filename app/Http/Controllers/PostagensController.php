@@ -35,7 +35,7 @@ class PostagensController extends Controller
      */
     public function create()
     {
-        return view('admin.Cadastro.Create.postagen');
+        return view('admin.Cadastro.create.postagen');
     }
 
     /**

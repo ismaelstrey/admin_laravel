@@ -26,7 +26,7 @@ class AnunciosController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function create() {
-		return view('admin.Cadastro.Create.anuncio');
+		return view('admin.Cadastro.create.anuncio');
 	}
 
 	/**
@@ -37,7 +37,6 @@ class AnunciosController extends Controller {
 	 */
 	public function store(Request $request) {
 		$dados = $request->all();
-
 		Anuncio::create($dados);
 		return redirect('/admin/cadastro/anuncio');
 	}
@@ -60,7 +59,8 @@ class AnunciosController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit($id) {
-		//
+		$anuncio = Anuncio::find($id);
+		return view('admin.Cadastro.edit.anuncio', compact('anuncio'));
 	}
 
 	/**
@@ -71,7 +71,14 @@ class AnunciosController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, $id) {
-		//
+		$dados = $request->all();
+		//Anuncio::update($dados,$id);
+		//return redirect('/admin/cadastro/anuncio');
+		dd($dados);
+
+Session::flash('Sucesso', 'Atualização realizado com sucesso!');
+
+return redirect()->back();
 	}
 
 	/**

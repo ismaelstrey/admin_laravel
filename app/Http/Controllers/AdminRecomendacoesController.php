@@ -26,7 +26,7 @@ class AdminRecomendacoesController extends Controller
      */
     public function create()
     {
-        return view('admin.Cadastro.Create.recomendacoes');
+        return view('admin.Cadastro.create.recomendacoes');
     }
 
     /**

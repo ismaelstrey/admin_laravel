@@ -30,7 +30,7 @@ class ServicosController extends Controller
      */
     public function create()
     {
-       return view('admin.Cadastro.Create.servicos');
+       return view('admin.Cadastro.create.servicos');
     }
 
     /**

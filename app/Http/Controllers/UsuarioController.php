@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 use App\Http\Requests;
 
 class UsuarioController extends Controller
@@ -19,7 +19,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-      return view('admin.Cadastro.usuario');
+        $usuarios = User::all();
+      return view('admin.Cadastro.index.usuario',compact('usuarios'));
     }
 
     /**
@@ -29,7 +30,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-         return view('admin.Cadastro.Create.usuario');
+         return view('admin.Cadastro.create.usuario');
 
     }
 
@@ -41,7 +42,10 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = $request->all();
+        $usuario['password'] = bcryptd($usuario['password']);
+        User::create($usuario);
+        return redirect()->back();
     }
 
     /**
@@ -52,7 +56,9 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        $usuario = User::find($id);
+      return view('admin.Cadastro.show.usuario',compact('usuario'));
+
     }
 
     /**

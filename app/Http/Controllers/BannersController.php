@@ -32,7 +32,7 @@ class BannersController extends Controller
      */
     public function create()
     {
-        return view('admin.Cadastro.Create.banner');
+        return view('admin.Cadastro.create.banner');
     }
 
     /**
@@ -80,6 +80,7 @@ class BannersController extends Controller
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**

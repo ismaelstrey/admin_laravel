@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Session;
 use App\Banner;
 use App\Http\Requests;
 
@@ -22,7 +23,7 @@ class BannersController extends Controller
     {
 
         $banners = Banner::all();
-         return view('admin.Cadastrados.banner',compact('banners'));
+         return view('admin.Cadastro.index.banner',compact('banners'));
     }
 
     /**
@@ -45,6 +46,7 @@ class BannersController extends Controller
     {
         $dados = $request->all();
         Banner::create($dados);
+          Session::flash('success', 'Banner criado com sucesso!');
         return redirect('/admin/cadastro/banner');
     }
 
@@ -56,7 +58,8 @@ class BannersController extends Controller
      */
     public function show($id)
     {
-        //
+       $anuncio = Banner::find($id);
+        return view('admin.Cadastro.show.banner', compact('banner'));
     }
 
     /**
@@ -67,7 +70,8 @@ class BannersController extends Controller
      */
     public function edit($id)
     {
-        //
+       $banner = Banner::find($id);
+        return view('admin.Cadastro.edit.banner', compact('banner'));
     }
 
     /**
@@ -79,7 +83,9 @@ class BannersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+            Banner::find($id)->update($request->all());
+            Session::flash('success', 'Atualização realizado com sucesso!');
+            return redirect('/admin/cadastro/banner');
 
     }
 
@@ -91,6 +97,8 @@ class BannersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deletar = Banner::destroy($id);
+        Session::flash('success', 'Banner deletado com sucesso!');
+        return redirect()->back();
     }
 }

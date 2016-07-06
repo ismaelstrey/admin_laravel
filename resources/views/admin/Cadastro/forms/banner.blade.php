@@ -7,21 +7,21 @@
         <small class="text-danger">{{ $errors->first('nome') }}</small>
     </div>
 
-    <div class="form-group{{ $errors->has('velocidade') ? ' has-error' : '' }}">
-        {!! Form::label('velocidade', 'Velocidade') !!}
-        {!! Form::number('velocidade', null, ['class' => 'form-control', 'required' => 'required']) !!}
-        <small class="text-danger">{{ $errors->first('velocidade') }}</small>
+    <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}">
+        {!! Form::label('link', 'Link') !!}
+        {!! Form::text('link', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        <small class="text-danger">{{ $errors->first('link') }}</small>
     </div>
 
-       <div class="form-group{{ $errors->has('img') ? ' has-error' : '' }}">
+    <div class="form-group{{ $errors->has('img') ? ' has-error' : '' }}">
         {!! Form::label('img', 'Imagen') !!}
-        {!! Form::file('img', ['class'=>'form-control input-sm m-bot15']) !!}
-        <small class="text-danger">{{ $errors->first('img') }}</small>
+        {!! Form::file('img', ['class' => 'form-control',]) !!}
+        <small class="text-danger">{{ $errors->first('nome') }}</small>
     </div>
 
     <div class="form-group{{ $errors->has('descricao') ? ' has-error' : '' }}">
         {!! Form::label('descricao', 'Descrição') !!}
-        {!! Form::textarea('descricao', null, ['class' => 'form-control ckeditor', 'required' => 'required']) !!}
+        {!! Form::textarea('descricao', null, ['class' => 'form-control', 'required' => 'required']) !!}
         <small class="text-danger">{{ $errors->first('descricao') }}</small>
     </div>
 

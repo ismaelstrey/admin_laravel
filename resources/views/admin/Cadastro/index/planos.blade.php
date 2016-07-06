@@ -18,6 +18,7 @@
 
   <div class="row">
                   <div class="col-lg-12">
+                  @include('admin.Cadastro.includes.session')
                     <table class="table table-hover branco">
                       <thead>
                         <tr>
@@ -37,6 +38,7 @@
                     <div class="btn-group">
   {!! Form::open (['method'=>'DELETE', 'url'=>['admin/cadastro/planos/'.$plano->id]]) !!}
    <a class="btn btn-success icon_check_alt2" href="{{ route('admin.cadastro.planos.show', ['id'=>$plano->id]) }}" title="Visualizar {{$plano->nome}}" ></a>
+   <a class="btn btn-warning icon_check_alt2" href="{{ route('admin.cadastro.planos.show', ['id'=>$plano->id]).'/edit' }}" title="Editar {{$plano->nome}}" ></a>
             <input type="submit" class="btn btn-danger icon_check_alt2" value= "X"  title="Delete {{$plano->nome}}">
  {!! Form::close ()  !!}
                     </div>

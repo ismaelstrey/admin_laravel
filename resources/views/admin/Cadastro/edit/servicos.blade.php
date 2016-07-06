@@ -14,18 +14,18 @@
 			</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="row">						
+						<div class="row">
 							 <section class="panel">
-		                          <div class="panel-body">		                              
-{!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.servicos.store', 'class' => 'form-horizontal']) !!}
+		                          <div class="panel-body">
+{!! Form::model($servico, ['method' => 'PATCH','route' => ['admin.cadastro.servicos.update', $servico->id]])   !!}
 @include('admin.Cadastro.forms.servico')
-{!! Form::close() !!}	
+{!! Form::close() !!}
 		                              </form>
 		                          </div>
 		                      </section>
-						</div> 
+						</div>
 					</div>
-				</div> 
+				</div>
 	</section>
 </section>
 @stop

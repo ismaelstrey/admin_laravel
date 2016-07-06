@@ -18,7 +18,7 @@
 						<div class="row">
 							 <section class="panel">
 		                          <div class="panel-body">
-			{!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.recomendacoes.store', 'class' => 'form-horizontal']) !!}
+			{!! Form::model($recomendacao, ['method' => 'PATCH','route' => ['admin.cadastro.recomendacoes.update', $recomendacao->id]])   !!}
 					@include('admin.Cadastro.forms.recomendacoes')
 			{!! Form::close() !!}
 		                          </div>

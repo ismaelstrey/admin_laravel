@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Recomendacoes;
 use App\Http\Requests;
+use Session;
 
 class AdminRecomendacoesController extends Controller
 {
@@ -38,8 +39,8 @@ class AdminRecomendacoesController extends Controller
     public function store(Request $request)
     {
         $dados = $request->all();
-//dd($dados);
         Recomendacoes::create($dados);
+        Session::flash('success', 'Recomendação criado com sucesso!');
        return redirect('/admin/cadastro/recomendacoes');
     }
 
@@ -75,7 +76,9 @@ class AdminRecomendacoesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Recomendacoes::find($id)->update($request->all());
+        Session::flash('success', 'Atualização realizado com sucesso!');
+        return redirect('/admin/cadastro/recomendacoes');
     }
 
     /**

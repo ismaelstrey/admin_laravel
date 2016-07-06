@@ -47,7 +47,8 @@ class RecomendacoesController extends Controller
      */
     public function show($id)
     {
-        //
+        $recomendacao = Recomendacoes::find($id);
+        return view('admin.Cadastro.show.recomendacoes', compact('recomendacao'));
     }
 
     /**
@@ -58,7 +59,8 @@ class RecomendacoesController extends Controller
      */
     public function edit($id)
     {
-        //
+      // $postagen = Postagen::find($id);
+      //   return view('admin.Cadastro.edit.postagen', compact('postagen'));
     }
 
     /**
@@ -81,6 +83,8 @@ class RecomendacoesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deletar = Recomendacoes::destroy($id);
+        Session::flash('success', 'Recomendacão deletada com sucesso!');
+        return redirect()->back();//
     }
 }

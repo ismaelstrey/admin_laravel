@@ -7,7 +7,7 @@
 					<h3 class="page-header"><i class="fa fa-file-text-o"></i> Cadastro de anuncio</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="{{URL::to('/admin/home')}}">Home</a></li>
-						<li><i class="icon_document_alt"></i><a href="{{URL::to('/admin/cadastro')}}">Cadastro</a></li>
+						<li><i class="icon_document_alt"></i><a href="{{URL::to('/admin/cadastro/anuncio')}}">Cadastro</a></li>
 						<li><i class="fa fa-file-text-o"></i>Anuncio</li>
 						<a class="pull-right" href="javascript:window.history.go(-1)">Voltar</a>
 					</ol>

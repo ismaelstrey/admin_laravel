@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Planos;
 use App\Http\Requests;
+use Session;
 
 class PlanosController extends Controller
 {
@@ -44,6 +45,7 @@ class PlanosController extends Controller
     {
          $dados = $request->all();
         Planos::create($dados);
+        Session::flash('success', 'Plano criado com sucesso!');
         return redirect('/admin/cadastro/planos');
     }
 
@@ -55,7 +57,8 @@ class PlanosController extends Controller
      */
     public function show($id)
     {
-        //
+        $plano = Planos::find($id);
+        return view('admin.Cadastro.show.planos', compact('plano'));
     }
 
     /**
@@ -66,7 +69,8 @@ class PlanosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $planos = Planos::find($id);
+        return view('admin.Cadastro.edit.planos', compact('planos'));
     }
 
     /**
@@ -78,7 +82,9 @@ class PlanosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Planos::find($id)->update($request->all());
+        Session::flash('success', 'Atualização realizado com sucesso!');
+        return redirect('/admin/cadastro/planos');
     }
 
     /**
@@ -89,6 +95,8 @@ class PlanosController extends Controller
      */
     public function destroy($id)
     {
-        //
+          $deletar = Planos::destroy($id);
+        Session::flash('success', 'Planos deletado com sucesso!');
+        return redirect()->back();
     }
 }

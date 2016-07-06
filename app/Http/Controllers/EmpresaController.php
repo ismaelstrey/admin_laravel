@@ -54,7 +54,8 @@ class EmpresaController extends Controller
      */
     public function show($id)
     {
-        //
+        $empresa = Empresa::find($id);
+        return view('admin.Cadastro.show.empresa', compact('empresa'));
     }
 
     /**
@@ -65,7 +66,8 @@ class EmpresaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $empresa = Empresa::find($id);
+        return view('admin.Cadastro.edit.empresa', compact('empresa'));
     }
 
     /**
@@ -77,7 +79,9 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       Empresa::find($id)->update($request->all());
+        Session::flash('success', 'Atualização realizado com sucesso!');
+        return redirect('/admin/cadastro/empresa');
     }
 
     /**

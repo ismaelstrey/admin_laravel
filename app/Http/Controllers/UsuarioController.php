@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests;
+use Session;
 
 class UsuarioController extends Controller
 {
@@ -69,7 +70,8 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usuario = Usuario::find($id);
+        return view('admin.Cadastro.edit.usuario', compact('usuario'));
     }
 
     /**
@@ -81,7 +83,9 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Usuario::find($id)->update($request->all());
+        Session::flash('success', 'Atualização realizado com sucesso!');
+        return redirect('/admin/cadastro/usuario');
     }
 
     /**
@@ -92,6 +96,8 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $deletar = Usuario::destroy($id);
+        Session::flash('success', 'Usuario deletado com sucesso!');
+        return redirect()->back();
     }
 }

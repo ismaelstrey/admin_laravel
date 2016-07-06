@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Servicos;
 use App\Http\Requests;
+use Session;
 
 class ServicosController extends Controller
 {
@@ -54,7 +55,8 @@ class ServicosController extends Controller
      */
     public function show($id)
     {
-        //
+        $servico = Servicos::find($id);
+        return view('admin.Cadastro.show.servicos', compact('servico'));
     }
 
     /**
@@ -65,7 +67,8 @@ class ServicosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $servico = Servicos::find($id);
+        return view('admin.Cadastro.edit.servicos', compact('servico'));
     }
 
     /**
@@ -77,7 +80,9 @@ class ServicosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+            Servicos::find($id)->update($request->all());
+            Session::flash('success', 'Atualização realizado com sucesso!');
+            return redirect('/admin/cadastro/servicos');
     }
 
     /**
@@ -88,6 +93,8 @@ class ServicosController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $deletar = Servicos::destroy($id);
+        Session::flash('success', 'Servicos deletado com sucesso!');
+        return redirect()->back();
     }
 }

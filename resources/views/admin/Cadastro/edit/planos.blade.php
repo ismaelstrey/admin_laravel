@@ -18,7 +18,7 @@
 						<div class="row">
 							 <section class="panel">
 		                          <div class="panel-body">
-{!! Form::open(['route'=>['admin.cadastro.planos.store']]) !!}
+{!! Form::model($plano, ['method' => 'PATCH','route' => ['admin.cadastro.planos.update', $plano->id]])!!}
 @include('admin.Cadastro.edit.planos', ['some' => 'data'])
 {!! Form::close() !!}
 

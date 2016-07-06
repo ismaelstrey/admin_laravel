@@ -14,38 +14,19 @@
 			</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="row">						
+						<div class="row">
 							 <section class="panel">
 		                          <div class="panel-body">
 		                              <form class="form-horizontal " method="get">
-											<div class="form-group">	
-											<div class="col-lg-2"></div>								
-											<div class="col-lg-8">
-											<label for="nome">Nome</label>
-											<input class="form-control m-bot15" type="text" name="nome" placeholder="Nome">
-											<label for="email">Email</label>
-											<input class="form-control m-bot15" type="text" name="email" placeholder="Email">
-											<label for="senha">Senha</label>
-											<input class="form-control m-bot15" type="password" name="senha" placeholder="********">
-											<label for="tipo">Tipo</label>
-											<select class="form-control m-bot15" name="tipo">
-                                              <option value="0">Admin</option>
-                                              <option value="1">Técnico</option>
-                                              <option value="2">Vendedor</option>
-                                          </select>
-											<hr>	
-											{!! Form::submit(' Cadastrar ', ['class'=>'btn btn-success pull-right']) !!}
-											{!! Form::reset(' Cancelar ', ['class'=>'btn btn-danger pull-right']) !!}
-												
-			                                 </div>
-			                                <div class="col-lg-2"></div>
-		                                  </div>
+					{!! Form::model($usuario, ['method' => 'PATCH','route' => ['admin.cadastro.usuario.update', $usuario->id]])   !!}
+					@include('admin.Cadastro.forms.usuario')
+					{!! Form::close() !!}
 		                              </form>
 		                          </div>
 		                      </section>
-						</div> 
+						</div>
 					</div>
-				</div> 
+				</div>
 	</section>
 </section>
 @stop

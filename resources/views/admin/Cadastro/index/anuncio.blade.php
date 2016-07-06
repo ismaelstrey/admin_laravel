@@ -6,7 +6,7 @@
           <section class=" wrapper">
           <div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-file-text-o"></i> Cadastro de Planos</h3>
+					<h3 class="page-header"><i class="fa fa-file-text-o"></i> Cadastro de Anuncios</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="{{URL::to('/admin/home')}}">Home</a></li>
 						<li><i class="icon_document_alt"></i>Planos</li>
@@ -18,6 +18,7 @@
 			</div>
               <div class="row">
                   <div class="col-lg-12">
+@include('admin.Cadastro.includes.session')
                     <table class="table table-hover branco">
                       <thead>
                         <tr>

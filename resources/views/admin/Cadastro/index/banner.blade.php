@@ -16,12 +16,14 @@
 			</div>
               <div class="row">
                   <div class="col-lg-12">
+                  @include('admin.Cadastro.includes.session')
                     <table class="table table-hover">
-                      <thead class="preto">
+                      <thead class="branco">
                         <tr>
                           <th>Nome</th>
                           <th>Link</th>
                           <th>Data de cadastro</th>
+                            <th><i class="icon_cogs"></i> Ação</th>
                         </tr>
                       </thead>
                       <tbody class="branco">
@@ -30,6 +32,15 @@
                           <td>{{$banner->nome}}</td>
                           <td>{{$banner->link}}</td>
                           <td>{{$banner->created_at}}</td>
+                            <td>
+                    <div class="btn-group">
+          {!! Form::open (['method'=>'DELETE', 'url'=>['admin/cadastro/banner/'.$banner->id]]) !!}
+            <a class="btn btn-success icon_check_alt2" href="{{ route('admin.cadastro.banner.show', ['id'=>$banner->id]) }}" title="Visualizar {{$banner->nome}}" ></a>
+            <a class="btn btn-warning icon_check_alt2" href="{{ route('admin.cadastro.banner.show', ['id'=>$banner->id]).'/edit' }}" title="Editar {{$banner->nome}}" ></a>
+            <input type="submit" class="btn btn-danger icon_check_alt2" value= "X"  title="Delete {{$banner->nome}}">
+          {!! Form::close ()  !!}
+                    </div>
+                            </td>
                         </tr>
                         @endforeach
                       </tbody>

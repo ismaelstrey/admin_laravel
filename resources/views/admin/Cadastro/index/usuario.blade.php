@@ -18,6 +18,7 @@
 
   <div class="row">
                   <div class="col-lg-12">
+                  @include('admin.Cadastro.includes.session')
                     <table class="table table-hover branco">
                       <thead>
                         <tr>
@@ -40,6 +41,7 @@
                     <div class="btn-group">
   {!! Form::open (['method'=>'DELETE', 'url'=>['admin/cadastro/usuarios/'.$usuario->id]]) !!}
    <a class="btn btn-success icon_check_alt2" href="{{ route('admin.cadastro.usuarios.show', ['id'=>$usuario->id]) }}" title="Visualizar {{$usuario->nome}}" ></a>
+   <a class="btn btn-warning icon_check_alt2" href="{{ route('admin.cadastro.usuarios.show', ['id'=>$usuario->id]).'/edit' }}" title="Editar {{$usuario->nome}}" ></a>
             <input type="submit" class="btn btn-danger icon_check_alt2" value= "X"  title="Delete {{$usuario->nome}}">
  {!! Form::close ()  !!}
                     </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Banner;
 use App\Servicos;
 use App\Postagen;
+use Session;
 
 use App\Http\Requests;
 

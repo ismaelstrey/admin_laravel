@@ -9,6 +9,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
+use Session;
 
 
 class PostagensController extends Controller
@@ -76,7 +77,6 @@ class PostagensController extends Controller
     public function show($id)
     {
         $postagen = Postagen::find($id);
-        //dd($postagens);
         return view('admin.Cadastro.show.postagen', compact('postagen'));
     }
 
@@ -88,7 +88,8 @@ class PostagensController extends Controller
      */
     public function edit($id)
     {
-        //
+         $postagen = Postagen::find($id);
+        return view('admin.Cadastro.edit.postagen', compact('postagen'));
     }
 
     /**
@@ -100,7 +101,9 @@ class PostagensController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       Postagen::find($id)->update($request->all());
+        Session::flash('success', 'Atualização realizado com sucesso!');
+        return redirect('/admin/cadastro/postagen');
     }
 
     /**

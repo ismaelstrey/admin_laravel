@@ -19,7 +19,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 			{!! Form::model($recomendacao, ['method' => 'PATCH','route' => ['admin.cadastro.recomendacoes.update', $recomendacao->id]])   !!}
-					@include('admin.Cadastro.forms.recomendacoes')
+					@include('admin.Cadastro.forms.recomendacoes', ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 			{!! Form::close() !!}
 		                          </div>
 		                      </section>

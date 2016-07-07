@@ -44,6 +44,7 @@ class ServicosController extends Controller
     {
         $servicos = $request->all();
         Servicos::create($servicos);
+        Session::flash('success', 'Serviços deletado com sucesso!');
         return redirect('/admin/cadastro/servicos');
     }
 

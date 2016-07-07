@@ -14,17 +14,17 @@
 			</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="row">						
+						<div class="row">
 							 <section class="panel">
 		                          <div class="panel-body">
 			{!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.postagen.store', 'class' => 'form-horizontal','files' => true]) !!}
-					@include('admin.Cadastro.forms.postagen')
-			{!! Form::close() !!}		                           
+					@include('admin.Cadastro.forms.postagen', ['reset' => 'Cancelar', 'submit'=>'Cadastrar'])
+			{!! Form::close() !!}
 		                          </div>
 		                      </section>
-						</div> 
+						</div>
 					</div>
-				</div> 
+				</div>
 	</section>
 </section>
 @stop

@@ -18,7 +18,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 {!! Form::model($servico, ['method' => 'PATCH','route' => ['admin.cadastro.servicos.update', $servico->id]])   !!}
-@include('admin.Cadastro.forms.servico')
+@include('admin.Cadastro.forms.servico', ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 {!! Form::close() !!}
 		                              </form>
 		                          </div>

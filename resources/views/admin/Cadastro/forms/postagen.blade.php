@@ -10,7 +10,7 @@
  <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
         {!! Form::label('imagem', 'Imagem') !!}
         {!! Form::file('imagem', ['class' => 'form-control',]) !!}
-        
+
         <small class="text-danger">{{ $errors->first('nome') }}</small>
     </div>
     <div class="form-group{{ $errors->has('descricao') ? ' has-error' : '' }}">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="btn-group pull-right">
-        {!! Form::reset("Reset", ['class' => 'btn btn-warning']) !!}
-        {!! Form::submit("Add", ['class' => 'btn btn-success']) !!}
+        {!! Form::reset($reset, ['class' => 'btn btn-warning']) !!}
+        {!! Form::submit($submit, ['class' => 'btn btn-success']) !!}
     </div>
 </div>

@@ -18,7 +18,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 {!! Form::model($postagen, ['method' => 'PATCH','route' => ['admin.cadastro.postagen.update', $postagen->id]])  !!}
-		@include('admin.Cadastro.forms.postagen')
+		@include('admin.Cadastro.forms.postagen', ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 {!! Form::close() !!}
 		                          </div>
 		                      </section>

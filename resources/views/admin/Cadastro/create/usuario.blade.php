@@ -18,7 +18,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 {!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.usuarios.store', 'class' => 'form-horizontal']) !!}
-@include('admin.Cadastro.forms.usuario')
+@include('admin.Cadastro.forms.usuario', ['reset' => 'Cancelar', 'submit'=>'Cadastrar'])
 {!! Form::close() !!}
 		                          </div>
 		                      </section>

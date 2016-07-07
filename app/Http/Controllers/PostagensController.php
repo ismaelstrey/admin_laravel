@@ -50,21 +50,17 @@ class PostagensController extends Controller
     {
  $dados = $request->all();
          if($request->hasFile('imagem')){
-
-            $image = $request->File('imagem');
-            $filename  = time().'.'. $image->getClientOriginalExtension();
-            $destino = '/images/uploads/'.$filename;
-            $thunb = base_path().'/public/images/uploads/thunb/'.$filename;
-            $path = base_path().'/public'.$destino;
-            Image::make($image->getRealPath())->resize(800, 340)->save($path);
-            Image::make($image->getRealPath())->resize(100, 50)->save($thunb);
-
-            $dados['imagem'] = $filename;
-
+                $image = $request->File('imagem');
+                $filename  = time().'.'. $image->getClientOriginalExtension();
+                $destino = '/images/uploads/'.$filename;
+                $thunb = base_path().'/public/images/uploads/thunb/'.$filename;
+                $path = base_path().'/public'.$destino;
+                Image::make($image->getRealPath())->resize(800, 340)->save($path);
+                Image::make($image->getRealPath())->resize(100, 50)->save($thunb);
+                $dados['imagem'] = $filename;
            }
-
-
         Postagen::create($dados);
+        Session::flash('success', 'Postagen  '.$dados['nome'].' criada com sucesso!');
         return redirect('/admin/cadastro/postagen');
     }
 
@@ -124,8 +120,10 @@ class PostagensController extends Controller
         }if(file_exists($thunb)){
             unlink($thunb);
         }
-       $deletar = Postagen::destroy($id);
-       return redirect('/admin/cadastro/postagen');
+       Postagen::destroy($id);
+       Session::flash('success', 'Postagen  '.$postagen['nome'].' deletada com sucesso!');
+       return redirect()->back();
+
 
     }
 }

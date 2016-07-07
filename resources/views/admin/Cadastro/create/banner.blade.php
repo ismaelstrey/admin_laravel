@@ -20,7 +20,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 {!! Form::open(['route'=>['admin.cadastro.banner.store']]) !!}
-@include('admin.Cadastro.forms.banner')
+@include('admin.Cadastro.forms.banner', ['reset' => 'Cancelar', 'submit'=>'Cadastrar'])
 {!! Form::close() !!}
 		                          </div>
 		                      </section>

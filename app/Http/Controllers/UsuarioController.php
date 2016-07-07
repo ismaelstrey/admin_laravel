@@ -44,9 +44,14 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $usuario = $request->all();
-        $usuario['password'] = bcryptd($usuario['password']);
-        User::create($usuario);
-        return redirect()->back();
+        return User::create([
+        'name' => $usuario['name'],
+        'email' => $usuario['email'],
+        'imagem' => $usuario['imagem'],
+        'password' => bcrypt($usuario['password']),
+        ]);
+         Session::flash('success', 'Usuario Criado com sucesso com sucesso!');
+        return redirect('/admin/cadastro/usuario');
     }
 
     /**

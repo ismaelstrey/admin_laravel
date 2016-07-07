@@ -19,7 +19,7 @@
 		                          <div class="panel-body">
 		                              <form class="form-horizontal " method="get">
 					{!! Form::model($usuario, ['method' => 'PATCH','route' => ['admin.cadastro.usuario.update', $usuario->id]])   !!}
-					@include('admin.Cadastro.forms.usuario')
+					@include('admin.Cadastro.forms.usuario',, ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 					{!! Form::close() !!}
 		                              </form>
 		                          </div>

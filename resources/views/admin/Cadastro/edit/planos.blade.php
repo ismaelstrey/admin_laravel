@@ -19,7 +19,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 {!! Form::model($plano, ['method' => 'PATCH','route' => ['admin.cadastro.planos.update', $plano->id]])!!}
-@include('admin.Cadastro.edit.planos', ['some' => 'data'])
+@include('admin.Cadastro.edit.planos', ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 {!! Form::close() !!}
 
 		                          </div>

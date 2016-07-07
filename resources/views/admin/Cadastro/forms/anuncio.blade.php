@@ -26,8 +26,8 @@
 {!! Form::label('anuncio', 'Anuncio', ['class'=>'label-control']) !!}
 {!! Form::textarea('anuncio', NULL, ['class'=>'form-control']) !!}
 <hr>
-{!! Form::submit('Cadastrar', ['class'=>'btn btn-info pull-right']) !!}
-{!! Form::reset(' Cancelar ', ['class'=>'btn btn-danger pull-right']) !!}
+{!! Form::reset($reset, ['class' => 'btn btn-warning']) !!}
+        {!! Form::submit($submit, ['class' => 'btn btn-success']) !!}
 </div>
 <div class="col-lg-2"></div>
 </div>

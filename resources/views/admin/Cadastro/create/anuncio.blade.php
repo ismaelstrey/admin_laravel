@@ -19,7 +19,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 		                             {!! Form::open(['route'=>['admin.cadastro.anuncio.store']]) !!}
-		                            @include('admin.Cadastro.forms.anuncio')
+		                            @include('admin.Cadastro.forms.anuncio', ['reset' => 'Cancelar', 'submit'=>'Cadastrar'])
 		                              {!! Form::close() !!}
 		                          </div>
 		                      </section>

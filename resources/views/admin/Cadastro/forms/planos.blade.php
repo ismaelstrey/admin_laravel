@@ -27,7 +27,7 @@
 
 
     <div class="btn-group pull-right">
-        {!! Form::reset("Reset", ['class' => 'btn btn-warning']) !!}
-        {!! Form::submit("Add", ['class' => 'btn btn-success']) !!}
+        {!! Form::reset($reset, ['class' => 'btn btn-warning']) !!}
+        {!! Form::submit($submit, ['class' => 'btn btn-success']) !!}
     </div>
 </div>

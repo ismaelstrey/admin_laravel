@@ -34,7 +34,6 @@ class PlanosController extends Controller
     {
        return view('admin.Cadastro.create.planos');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -48,7 +47,6 @@ class PlanosController extends Controller
         Session::flash('success', 'Plano criado com sucesso!');
         return redirect('/admin/cadastro/planos');
     }
-
     /**
      * Display the specified resource.
      *
@@ -69,8 +67,8 @@ class PlanosController extends Controller
      */
     public function edit($id)
     {
-        $planos = Planos::find($id);
-        return view('admin.Cadastro.edit.planos', compact('planos'));
+        $plano = Planos::find($id);
+        return view('admin.Cadastro.edit.planos', compact('plano'));
     }
 
     /**

@@ -19,7 +19,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 			{!! Form::open(['method' => 'POST', 'route' => 'admin.cadastro.recomendacoes.store', 'class' => 'form-horizontal']) !!}
-					@include('admin.Cadastro.forms.recomendacoes')
+					@include('admin.Cadastro.forms.recomendacoes', ['reset' => 'Cancelar', 'submit'=>'Cadastrar'])
 			{!! Form::close() !!}
 		                          </div>
 		                      </section>

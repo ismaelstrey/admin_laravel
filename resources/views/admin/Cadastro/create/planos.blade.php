@@ -21,7 +21,7 @@
 				<section class="panel">
 					<div class="panel-body">
 						{!! Form::open(['route'=>['admin.cadastro.planos.store']]) !!}
-							@include('admin.Cadastro.forms.planos')
+							@include('admin.Cadastro.forms.planos', ['reset' => 'Cancelar', 'submit'=>'Cadastrar'])
 						{!! Form::close() !!}
 					</div>
 				</section>

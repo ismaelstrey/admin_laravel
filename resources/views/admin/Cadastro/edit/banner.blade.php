@@ -20,7 +20,7 @@
 							 <section class="panel">
 		                          <div class="panel-body">
 {!! Form::model($banner, ['method' => 'PATCH','route' => ['admin.cadastro.banner.update', $banner->id]])!!}
-@include('admin.Cadastro.forms.banner', ['some' => 'data'])
+@include('admin.Cadastro.forms.banner', ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 {!! Form::close() !!}
 		                          </div>
 		                      </section>

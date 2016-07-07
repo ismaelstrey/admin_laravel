@@ -26,7 +26,7 @@
 		, $anuncio->id
 		]])
     !!}
-@include('admin.Cadastro.forms.anuncio', ['some' => 'data'])
+@include('admin.Cadastro.forms.anuncio', ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 {!! Form::close() !!}
 		                          </div>
 		                      </section>

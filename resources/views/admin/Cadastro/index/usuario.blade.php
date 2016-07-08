@@ -34,7 +34,7 @@
                          @foreach ($usuarios as $usuario)
                         <tr>
                           <td>{{$usuario->name}}</td>
-                          <td>{{$usuario->imagem}}</td>
+                          <td><img src="{{ url('images/uploads/usuario/thunb/'.$usuario->imagem) }}"></td>
                           <td>{{$usuario->email}}</td>
                           <td>{{$usuario->created_at}}</td>
                              <td>

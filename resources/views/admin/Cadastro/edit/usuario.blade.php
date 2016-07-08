@@ -17,11 +17,11 @@
 						<div class="row">
 							 <section class="panel">
 		                          <div class="panel-body">
-		                              <form class="form-horizontal " method="get">
-					{!! Form::model($usuario, ['method' => 'PATCH','route' => ['admin.cadastro.usuario.update', $usuario->id]])   !!}
-					@include('admin.Cadastro.forms.usuario',, ['reset' => 'Cancelar', 'submit'=>'Atualizar'])
+
+					{!! Form::model($usuario, ['method' => 'PATCH','route' => ['admin.cadastro.usuarios.update',$usuario->id],'files'=> true])   !!}
+					@include('admin.Cadastro.forms.usuario',['reset' => 'Cancelar', 'submit'=>'Atualizar'])
 					{!! Form::close() !!}
-		                              </form>
+
 		                          </div>
 		                      </section>
 						</div>

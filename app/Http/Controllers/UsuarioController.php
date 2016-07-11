@@ -107,26 +107,27 @@ class UsuarioController extends Controller
 
          $usuario = $request->all();
          if($request->hasFile('imagem')){
-
-
-
+    $delete = User::find($id);
+if ($delete['imagem'] !== "") {
+                            if (file_exists(base_path().'/public/images/uploads/usuario/'.$delete['imagem'])) {
+                            unlink(base_path().'/public/images/uploads/usuario/'.$delete['imagem']);
+                            }if(file_exists(base_path().'/public/images/uploads/usuario/thunb/'.$delete['imagem'] )){
+                            unlink(base_path().'/public/images/uploads/usuario/thunb/'.$delete['imagem']);
+                            }
+}
                 $image = $request->File('imagem');
                 $filename  = time().'.'. $image->getClientOriginalExtension();
                 $destino = '/images/uploads/usuario/'.$filename;
                 $thunb = base_path().'/public/images/uploads/usuario/thunb/'.$filename;
                 $path = base_path().'/public'.$destino;
                 Image::make($image->getRealPath())->resize(800, 340)->save($path);
-                Image::make($image->getRealPath())->resize(100, 50)->save($thunb);
+                Image::make($image->getRealPath())->resize(50, 50)->save($thunb);
 
-                $delete = User::find($id);
-                            if (file_exists(base_path().'/public/images/uploads/usuario/'.$delete['imagem'])) {
-                            unlink(base_path().'/public/images/uploads/usuario/'.$delete['imagem']);
-                            }if(file_exists(base_path().'/public/images/uploads/usuario/thunb/'.$delete['imagem'] )){
-                            unlink(base_path().'/public/images/uploads/usuario/thunb/'.$delete['imagem']);
-                            }
+
                 $usuario['imagem'] = $filename;
             // dd($request->hasFile('imagem'));
            }
+          $usuario[ 'password' ] = bcrypt($usuario['password']);
         User::find($id)->update($usuario);
         Session::flash('success', 'Atualização realizado com sucesso!');
        return redirect('/admin/cadastro/usuarios');

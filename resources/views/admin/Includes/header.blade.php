@@ -227,10 +227,11 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                            {!! Html::image('assets/admin/img/avatar1_small.jpg'); !!}
+                            {!! Html::image('images/uploads/usuario/thunb/'.Auth::user()->imagem); !!}
 
                             </span>
-                            <span class="username">{{ Auth::user()->name }}</span>
+                            <span class="username">{{ Auth::user()->name}}</span>
+                        {{--     {{dd(Auth::user())}} --}}
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">

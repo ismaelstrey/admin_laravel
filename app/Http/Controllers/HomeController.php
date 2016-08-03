@@ -15,8 +15,8 @@ class HomeController extends Controller
     public function index(){
     	$dados['banner'] = Banner::all();
         $dados['servicos'] = Servicos::all();
-       // $dados['postagens'] = Postagen::all();
-        dd($dados);
-        //return view('front.index',compact('dados'));
+        $dados['postagens'] = Postagen::all();
+       // dd($dados);
+        return view('front.index',compact('dados'));
     }
 }

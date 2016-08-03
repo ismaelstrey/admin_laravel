@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Banner;
 use App\Servicos;
+use App\Postagen;
 use App\Http\Requests;
 class HomeController extends Controller
 {
@@ -16,6 +17,7 @@ class HomeController extends Controller
     {
         $dados['banner'] = Banner::all();
         $dados['servicos'] = Servicos::all();
+         $dados['postagens'] = Postagen::all();
         //dd($dados);
         return view('front.index',compact('dados'));
     }

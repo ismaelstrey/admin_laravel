@@ -15,7 +15,8 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{ url('assets/front/favicon.png') }}" />		
     <!-- Font Awesome -->
-    {{ Html::style('assets/front/css/font-awesome.min.css')}}
+    {{ Html::style(url('assets/front/css/font-awesome.min.css'))}}
+   <link rel="stylesheet" href="" type="text/css" />
     {{ Html::style('assets/front/css/bootstrap.min.css')}}
     {{ Html::style('assets/front/css/camera.css')}}
     {{ Html::style('assets/front/css/templatemo_style.css')}}

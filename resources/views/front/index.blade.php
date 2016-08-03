@@ -2,6 +2,8 @@
 @section('slide')
 <div class="banner" id="templatemo_banner_slide">
     <ul>
+    @if (isset($dados['banner']))       
+   
         @foreach ($dados['banner'] as $banner) 
             <li class="templatemo_banner_slide_0{{$banner->id++}}">
                 <div class="slide_caption">
@@ -10,6 +12,7 @@
                 </div>
             </li>
         @endforeach
+         @endif
     </ul>
 </div>
 @stop

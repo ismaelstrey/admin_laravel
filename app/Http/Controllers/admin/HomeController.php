@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $dados['banner'] = Banner::all();
-        $dados['servicos'] = Servicos::all()->random(4);
+        $dados['servicos'] = Servicos::all();
         //dd($dados);
         return view('front.index',compact('dados'));
     }
